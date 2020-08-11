@@ -6,6 +6,7 @@ import challenge.Trainee.service.DatosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -15,10 +16,6 @@ public class DatosController {
     @Autowired
     public DatosRepository repoDatos;
 
-    @GetMapping("ping")
-    public String ping(){
-        return "pong";
-    }
     @GetMapping("mostrar")
     public List<Datos> mostrarTodo(){
         return serviceDatos.mostrarTodo();
@@ -29,9 +26,9 @@ public class DatosController {
                 ultimoNombre();
     }
     @PostMapping(value = "guardar" , consumes = "application/json")
-    public List<Datos> guardar(@RequestBody Datos datos){
+    public String guardar(@RequestBody Datos datos){
         serviceDatos.guardarTodo(datos);
-        return mostrarTodo();
+        return "datos";
     }
     public Integer mostrarDni(){
         return repoDatos.findById(0);
