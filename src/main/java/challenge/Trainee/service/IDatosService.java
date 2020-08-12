@@ -11,4 +11,6 @@ public interface IDatosService {
     void guardarTodo(Datos datos);
 
     void borrarTodo();
+
+
 }

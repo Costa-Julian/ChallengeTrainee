@@ -22,27 +22,29 @@ public class DatosController {
     }
     @GetMapping("dni")
     public String finalDni(){
-        return "Primer Dni: " + mostrarDniPrimero() + "Nombre ultima persona: " +
-                ultimoNombre();
+        return "Primer Dni: " + mostrarDniPrimero() ;
     }
     @PostMapping(value = "guardar" , consumes = "application/json")
     public String guardar(@RequestBody Datos datos){
         serviceDatos.guardarTodo(datos);
-        return "datos";
-    }
-    public Integer mostrarDni(){
-        return repoDatos.findById(0);
-    }
-    public Integer mostrarDniPrimero(){
-        return repoDatos.findTopBy();
+        return ultimoNombre();
+
     }
     @GetMapping("nombre")
     public String ultimoNombre(){
-        return repoDatos.findTopByOrderByIdDesc();
+        return repoDatos.findFirst1By();
     }
     @GetMapping("borrar")
     public String borrarTodo(){
         serviceDatos.borrarTodo();
         return "Datos borrados";
     }
+
+    /*public Integer mostrarDni(){
+        return repoDatos.findById(0);
+    }*/
+    public Integer mostrarDniPrimero(){
+        return repoDatos.findTop1By();
+    }
+
 }
