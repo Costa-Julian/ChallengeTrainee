@@ -4,7 +4,7 @@ import challenge.Trainee.model.Datos;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import java.util.List;
+
 
 public interface DatosRepository extends JpaRepository <Datos , Integer> {
    /* @Query("SELECT d.dni FROM Datos AS d")
