@@ -15,24 +15,23 @@ public class DatosController {
     public DatosService serviceDatos;
     @Autowired
     public DatosRepository repoDatos;
-
-    @GetMapping("mostrar")
-    public List<Datos> mostrarTodo(){
+    /*Punto 2.c */
+    @PostMapping(value = "mostrar", consumes = "application/json" )
+    public List<Datos> mostrarTodo(@RequestBody Datos datos){
+        serviceDatos.guardarTodo(datos);
         return serviceDatos.mostrarTodo();
     }
-    @GetMapping("dni")
-    public String finalDni(){
-        return "Primer Dni: " + mostrarDniPrimero() ;
-    }
+
+    /* Punto 2.a , 2.b */
     @PostMapping(value = "guardar" , consumes = "application/json")
     public String guardar(@RequestBody Datos datos){
         serviceDatos.guardarTodo(datos);
-        return ultimoNombre();
+        return "Primer Dni: " + mostrarDniPrimero() + "\nUltimo nombre : " + mostrarUltimoNombre();
 
-    }
-    @GetMapping("nombre")
-    public String ultimoNombre(){
-        return repoDatos.findFirst1By();
+    }/* 3.1*/
+    @GetMapping("perez")
+    public List<Datos> perez(){
+        return repoDatos.findByApellido("Perez");
     }
     @GetMapping("borrar")
     public String borrarTodo(){
@@ -40,11 +39,12 @@ public class DatosController {
         return "Datos borrados";
     }
 
-    /*public Integer mostrarDni(){
-        return repoDatos.findById(0);
-    }*/
+    public String mostrarUltimoNombre(){
+        return repoDatos.findTopByOrderByCodigo();
+    }
+
     public Integer mostrarDniPrimero(){
-        return repoDatos.findTop1By();
+        return repoDatos.findFirst1By();
     }
 
 }
