@@ -9,5 +9,5 @@ public interface INombreService {
 
     List<Nombre> mostrarTodo();
 
-    void guardar(Nombre nombre);
+    void guardar(List<Nombre> nombre);
 }

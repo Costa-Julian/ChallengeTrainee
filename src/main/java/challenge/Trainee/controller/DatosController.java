@@ -17,20 +17,27 @@ public class DatosController {
     public DatosRepository repoDatos;
     /*Punto 2.c */
     @PostMapping(value = "mostrar", consumes = "application/json" )
-    public List<Datos> mostrarTodo(@RequestBody Datos datos){
+    public List<Datos> mostrarTodo(@RequestBody List<Datos> datos){
         serviceDatos.guardarTodo(datos);
+        /*te falto ordenar por codigo*/
         return serviceDatos.mostrarTodo();
     }
 
     /* Punto 2.a , 2.b */
     @PostMapping(value = "guardar" , consumes = "application/json")
-    public String guardar(@RequestBody Datos datos){
+    public String guardar(@RequestBody List<Datos> datos){
         serviceDatos.guardarTodo(datos);
+        /*esta bien la consigna pero no esta retornando un JSON*/
         return "Primer Dni: " + mostrarDniPrimero() + "\nUltimo nombre : " + mostrarUltimoNombre();
 
     }/* 3.1*/
     @GetMapping("perez")
     public List<Datos> perez(){
+        /*
+        que pasa si quiero buscar personas con otro apellido
+        * como podria parametrizar el apellido y que lo tome la base de datos al buscarlo
+        *(Tomar en cuenta la mayuscula de la primer letra que se podria hacer)
+        * */
         return repoDatos.findByApellido("Perez");
     }
     @GetMapping("borrar")

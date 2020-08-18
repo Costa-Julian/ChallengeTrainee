@@ -12,6 +12,7 @@ public interface DatosRepository extends JpaRepository <Datos , Integer> {
     @Query("SELECT d.dni FROM Datos AS d WHERE codigo IN(1)")
     Integer findFirst1By();
 
+    /*por lo general no es buena practica usar nativeQuery*/
    @Query(value = "SELECT nombre FROM datos ORDER BY 'codigo' DESC LIMIT 1 " , nativeQuery = true)
     String findTopByOrderByCodigo();
 

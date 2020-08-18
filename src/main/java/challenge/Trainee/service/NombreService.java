@@ -15,8 +15,8 @@ public class NombreService implements INombreService {
         return repoNombre.findAll();
     }
 
-    @Override
-    public void guardar(Nombre nombre) {
-        repoNombre.save(nombre);
+    public void guardar(List<Nombre> nombres) {
+        for(Nombre nombre : nombres)
+          repoNombre.save(nombre);
     }
 }

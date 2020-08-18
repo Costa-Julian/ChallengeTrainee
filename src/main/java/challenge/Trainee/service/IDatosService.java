@@ -8,7 +8,7 @@ public interface IDatosService {
 
     List<Datos> mostrarTodo();
 
-    void guardarTodo(Datos datos);
+    void guardarTodo(List<Datos> datos);
 
     void borrarTodo();
 

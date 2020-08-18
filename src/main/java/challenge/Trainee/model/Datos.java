@@ -5,6 +5,13 @@ import javax.persistence.*;
 @Entity
 @Table(name = "datos")
 public class Datos {
+
+    /*falto ponerle los datos
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Siempre trata de que se mantenga una coherencia en tu propio codigo
+    (Espacios que dejas para los ifs , anotations que usas,
+    si le pones o no llaves despues de un if de una sola sentencia,  etc)
+    */
     @Id
     private Integer codigo;
     private String nombre;

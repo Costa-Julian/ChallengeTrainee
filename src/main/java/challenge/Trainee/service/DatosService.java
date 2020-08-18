@@ -17,9 +17,12 @@ public class DatosService implements IDatosService{
         return repoDatos.findAll();
     }
 
+    /*se le agrego iteracion para guardar todos "datos" de la lista*/
     @Override
-    public void guardarTodo(Datos datos) {
-        repoDatos.save(datos);
+    public void guardarTodo(List<Datos> datos) {
+        for(Datos dato: datos){
+          repoDatos.save(dato);
+        }
     }
 
     @Override
