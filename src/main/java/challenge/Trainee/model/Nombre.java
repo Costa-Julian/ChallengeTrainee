@@ -18,11 +18,7 @@ public class Nombre {
   public Nombre(String nombre){
       this.nombre = nombre;
   }
- /*tengo entendido que no seria necesario*/
-    public Nombre(Integer id, String nombre){
-        this.id = id;
-        this.nombre = nombre;
-    }
+
 
     public Integer getId() {
         return id;

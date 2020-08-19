@@ -2,13 +2,13 @@ package challenge.Trainee.controller;
 
 import challenge.Trainee.model.Nombre;
 import challenge.Trainee.repository.NombreRepository;
-import challenge.Trainee.service.INombreService;
+
 import challenge.Trainee.service.NombreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
+
 import java.util.List;
 
 /*

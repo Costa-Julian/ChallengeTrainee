@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 
-public interface DatosRepository extends JpaRepository <Datos , Integer> {
+public interface DatosRepository extends JpaRepository <Datos , Long> {
 
     @Query("SELECT d.dni FROM Datos AS d WHERE codigo IN(1)")
     Integer findFirst1By();

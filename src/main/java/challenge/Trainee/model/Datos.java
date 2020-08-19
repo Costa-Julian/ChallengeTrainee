@@ -13,16 +13,17 @@ public class Datos {
     si le pones o no llaves despues de un if de una sola sentencia,  etc)
     */
     @Id
-    private Integer codigo;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long codigo;
     private String nombre;
     private String apellido;
     private Integer dni;
 
-    public Integer getCodigo() {
+    public long getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(Integer codigo) {
+    public void setCodigo(long codigo) {
         this.codigo = codigo;
     }
 
