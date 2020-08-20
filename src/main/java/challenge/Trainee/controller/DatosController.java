@@ -50,7 +50,7 @@ public class DatosController {
         return "Datos borrados";
     }
 
-    public String mostrarUltimoNombre(){
+   public String mostrarUltimoNombre(){
         return repoDatos.findTopByOrderByCodigo();
     }
 
