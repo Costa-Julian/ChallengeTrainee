@@ -32,8 +32,8 @@ public class NombreController {
     /*recibo lista de nombres List<Nombre>
     * quizas este /nombre estaria de mas */
     @PostMapping(value = "/nombre",consumes = "application/json")
-    public ReturnNombres principal(@RequestBody List<Nombre> nombre){
-        List<Nombre> lista = new ArrayList<>();
+    public ReturnNombres principal(@RequestBody List<String> nombre){
+        List<String> lista = new ArrayList<>();
         lista.addAll(nombre);
 
         return new ReturnNombres(lista);

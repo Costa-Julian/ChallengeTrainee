@@ -17,4 +17,6 @@ public interface DatosRepository extends JpaRepository <Datos , Long> {
     String findTopByOrderByCodigo();
 
     List<Datos> findByApellido(String apellido);
+    @Query(value = "SELECT * FROM datos ORDER BY 'codigo'" , nativeQuery = true)
+    List findTop15By();
 }

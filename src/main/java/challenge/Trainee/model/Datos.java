@@ -20,7 +20,7 @@ public class Datos {
     private Integer dni;
 
     public long getCodigo() {
-        return codigo;
+        return codigo ;
     }
 
     public void setCodigo(long codigo) {

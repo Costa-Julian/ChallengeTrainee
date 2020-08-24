@@ -1,13 +1,14 @@
 package challenge.Trainee.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Nombre {
     /*Los ids conviene ponerlos en Long por una cuestion de cantidades que se lleguen a manejar*/
 
     @Id
-    private String nombre;
+    private String  nombre;
 
 
     public Nombre(){}
@@ -18,7 +19,7 @@ public class Nombre {
   }
 
 
-    public String getNombre(String nombre) {
+    public String getNombre() {
         return nombre;
     }
 
@@ -29,7 +30,7 @@ public class Nombre {
     @Override
     public String toString() {
         return "Nombre{" +
-                "nombre='" + nombre + '\'' +
+                "nombre=" + nombre +
                 '}';
     }
 }

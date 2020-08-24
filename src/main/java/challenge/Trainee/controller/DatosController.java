@@ -2,6 +2,7 @@ package challenge.Trainee.controller;
 
 import challenge.Trainee.model.Datos;
 import challenge.Trainee.model.Prueba;
+import challenge.Trainee.model.RetornoDatos;
 import challenge.Trainee.repository.DatosRepository;
 import challenge.Trainee.service.DatosService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,13 +27,10 @@ public class DatosController {
 
     /* Punto 2.a , 2.b */
     @PostMapping(value = "guardar" , consumes = "application/json")
-    public String guardar(@RequestBody List<Datos> datos){
+    public RetornoDatos guardar(@RequestBody List<Datos> datos){
         serviceDatos.guardarTodo(datos);
-        Integer datodni = mostrarDniPrimero();
-        String ultimoNombre = mostrarUltimoNombre();
-        /*esta bien la consigna pero no esta retornando un JSON*/
-        return "{\"Primer Dni\":}" + datodni +
-                "{\"Ultimo nombre\":}"  + mostrarUltimoNombre();
+
+        return new RetornoDatos(datos);
 
     }/* 3.1*/
     @GetMapping("perez")
