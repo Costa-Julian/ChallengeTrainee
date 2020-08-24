@@ -11,9 +11,9 @@ import java.util.stream.Collectors;
 
 public class ReturnNombres {
 
-    private List<String> comNombres = null;
+    private List<String> comNombres ;
     private long cantidadNombres;
-    private List<String> finNombres = null;
+    private List<String> finNombres ;
   //  public List<Nombre> nombres;
 
 
