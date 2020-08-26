@@ -29,8 +29,12 @@ public class DatosController {
     @PostMapping(value = "guardar" , consumes = "application/json")
     public RetornoDatos guardar(@RequestBody List<Datos> datos){
         serviceDatos.guardarTodo(datos);
+        RetornoDatos retorno = new RetornoDatos();
+        retorno.setUltNombre(mostrarUltimoNombre());
+        retorno.setPrimerDni(mostrarDniPrimero());
+        retorno.setOrden(ordenLista());
 
-        return new RetornoDatos(datos);
+        return retorno;
 
     }/* 3.1*/
     @GetMapping("perez")
@@ -49,12 +53,14 @@ public class DatosController {
     }
 
    public String mostrarUltimoNombre(){
-        return repoDatos.findTopByOrderByCodigo();
+        return repoDatos.findTopByOrderByCodigoDesc();
     }
 
     public Integer mostrarDniPrimero(){
         return repoDatos.findFirst1By();
     }
+
+    public List<Datos> ordenLista(){ return repoDatos.findByOrderByCodigo();}
 
     @GetMapping(value = "/test" , produces = "application/json")
     public String pruebaRetornoJSON(){

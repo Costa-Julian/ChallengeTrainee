@@ -4,17 +4,17 @@ import challenge.Trainee.repository.DatosRepository;
 
 import java.util.List;
 
-public class RetornoDatos {
-    private long primerDni;
+public class RetornoDatos{
+    private Integer primerDni;
     private String ultNombre;
     private List<Datos> orden;
 
-    public DatosRepository repoDatos;
+    public RetornoDatos(){}
 
-    public RetornoDatos(List<Datos> datos){
-        this.primerDni = mostrarDniPrimero();
-        this.ultNombre = "preba";
-        this.orden = null;
+    public RetornoDatos(Integer primerDni, String ultNombre, List<Datos> orden){
+        this.primerDni = primerDni;
+        this.ultNombre = ultNombre;
+        this.orden = orden;
 
     }
 
@@ -22,7 +22,7 @@ public class RetornoDatos {
         return primerDni;
     }
 
-    public void setPrimerDni(long primerDni) {
+    public void setPrimerDni(Integer primerDni) {
         this.primerDni = primerDni;
     }
 
@@ -51,11 +51,6 @@ public class RetornoDatos {
                 '}';
     }
 
-    /*public List<Datos> orden(List<Datos> Datos){
-        return repoDatos.findTop15By();
-    }*/
-    public Integer mostrarDniPrimero(){
-        return repoDatos.findFirst1By();
-    }
+
 }
 

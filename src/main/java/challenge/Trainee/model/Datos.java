@@ -14,7 +14,7 @@ public class Datos {
     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long codigo;
+    private Integer codigo;
     private String nombre;
     private String apellido;
     private Integer dni;
@@ -23,7 +23,7 @@ public class Datos {
         return codigo ;
     }
 
-    public void setCodigo(long codigo) {
+    public void setCodigo(Integer codigo) {
         this.codigo = codigo;
     }
 
