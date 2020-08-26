@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -19,9 +20,10 @@ public class DatosService implements IDatosService{
 
     /*se le agrego iteracion para guardar todos "datos" de la lista*/
     @Override
+    @Transactional
     public void guardarTodo(List<Datos> datos) {
-        for(Datos dato: datos){
-          repoDatos.save(dato);
+       for(Datos dato: datos){
+          repoDatos.saveAndFlush(dato);
         }
     }
 

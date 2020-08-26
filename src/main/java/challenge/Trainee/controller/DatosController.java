@@ -17,13 +17,7 @@ public class DatosController {
     public DatosService serviceDatos;
     @Autowired
     public DatosRepository repoDatos;
-    /*Punto 2.c */
-    @PostMapping(value = "mostrar", consumes = "application/json" )
-    public List<Datos> mostrarTodo(@RequestBody List<Datos> datos){
-        serviceDatos.guardarTodo(datos);
-        /*te falto ordenar por codigo*/
-        return serviceDatos.mostrarTodo();
-    }
+
 
     /* Punto 2.a , 2.b */
     @PostMapping(value = "guardar" , consumes = "application/json")
