@@ -6,18 +6,21 @@ import javax.persistence.*;
 @Table(name = "datos")
 public class Datos {
 
-    /*falto ponerle los datos
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Siempre trata de que se mantenga una coherencia en tu propio codigo
-    (Espacios que dejas para los ifs , anotations que usas,
-    si le pones o no llaves despues de un if de una sola sentencia,  etc)
-    */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private Integer codigo;
     private String nombre;
     private String apellido;
     private Integer dni;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public long getCodigo() {
         return codigo ;
@@ -54,7 +57,8 @@ public class Datos {
     @Override
     public String toString() {
         return "Datos{" +
-                "codigo=" + codigo +
+                "id=" + id +
+                ", codigo=" + codigo +
                 ", nombre='" + nombre + '\'' +
                 ", apellido='" + apellido + '\'' +
                 ", dni=" + dni +

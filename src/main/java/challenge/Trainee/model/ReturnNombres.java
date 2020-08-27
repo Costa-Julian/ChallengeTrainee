@@ -11,24 +11,25 @@ import java.util.stream.Collectors;
 
 public class ReturnNombres {
 
-    private List<String> comNombres ;
+    private List<String> comienzosConLU ;
     private long cantidadNombres;
-    private List<String> finNombres ;
-  //  public List<Nombre> nombres;
+    private List<String> terminadosEnS ;
+
 
 
     public ReturnNombres(List<String> nombres){
-        this.comNombres = inicio(nombres);
+        this.comienzosConLU = inicio(nombres);
         this.cantidadNombres = nombres.size();
-        this.finNombres = fin(nombres);
+        this.terminadosEnS = fin(nombres);
     }
 
-    public List<String> getComNombres() {
-        return comNombres;
+
+    public List<String> getComienzosConLU() {
+        return comienzosConLU;
     }
 
-    public void setComNombres(List<String> comNombres) {
-        this.comNombres = comNombres;
+    public void setComienzosConLU(List<String> comienzosConLU) {
+        this.comienzosConLU = comienzosConLU;
     }
 
     public long getCantidadNombres() {
@@ -39,19 +40,19 @@ public class ReturnNombres {
         this.cantidadNombres = cantidadNombres;
     }
 
-    public List<String> getFinNombres() {
-        return finNombres;
+    public List<String> getTerminadosEnS() {
+        return terminadosEnS;
     }
 
-    public void setFinNombres(List<String> finNombres) {
-        this.finNombres = finNombres;
+    public void setTerminadosEnS(List<String> terminadosEnS) {
+        this.terminadosEnS = terminadosEnS;
     }
 
     @Override
     public String toString() {
-        return "comNombres=" + comNombres +
+        return "Comenzados con Lu=" + comienzosConLU +
                 ", cantidadNombres=" + cantidadNombres +
-                ", finNombres=" + finNombres ;
+                ", Terminados en S=" + terminadosEnS ;
     }
 
     public String comienzo() {

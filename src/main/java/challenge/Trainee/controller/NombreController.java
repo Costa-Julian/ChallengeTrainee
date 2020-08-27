@@ -11,7 +11,7 @@ import java.util.List;
 
 public class NombreController {
 
-    @PostMapping(value = "/nombre",consumes = "application/json")
+    @PostMapping(value = "/nombres",consumes = "application/json")
     public ReturnNombres principal(@RequestBody List<String> nombre){
         List<String> lista = new ArrayList<>();
         lista.addAll(nombre);

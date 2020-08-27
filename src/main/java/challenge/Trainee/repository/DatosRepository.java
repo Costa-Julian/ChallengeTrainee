@@ -9,14 +9,14 @@ import java.util.List;
 
 public interface DatosRepository extends JpaRepository <Datos , Long> {
 
-   @Query("SELECT d.dni FROM Datos AS d WHERE codigo IN(1)")
+   @Query("SELECT d.dni FROM Datos AS d WHERE id IN(1)")
    Integer findFirst1By();
 
-    /*por lo general no es buena practica usar nativeQuery*/
-   @Query(value = "SELECT nombre FROM datos ORDER BY codigo  DESC LIMIT 1 " , nativeQuery = true)
+
+   @Query(value = "SELECT nombre FROM datos ORDER BY id  DESC LIMIT 1 ", nativeQuery = true )
     String findTopByOrderByCodigoDesc();
 
     List<Datos> findByApellido(String apellido);
-    @Query(value = "SELECT * FROM datos ORDER BY 'codigo'" , nativeQuery = true)
+    @Query(value = "SELECT * FROM datos ORDER BY codigo",nativeQuery = true )
     List<Datos> findByOrderByCodigo();
 }

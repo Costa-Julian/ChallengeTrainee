@@ -18,7 +18,7 @@ public class DatosService implements IDatosService{
         return repoDatos.findAll();
     }
 
-    /*se le agrego iteracion para guardar todos "datos" de la lista*/
+
     @Override
     @Transactional
     public void guardarTodo(List<Datos> datos) {

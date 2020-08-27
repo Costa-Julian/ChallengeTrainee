@@ -5,7 +5,7 @@ import java.util.List;
 
 @Entity
 public class Nombre {
-    /*Los ids conviene ponerlos en Long por una cuestion de cantidades que se lleguen a manejar*/
+
 
     @Id
     private String  nombre;
@@ -13,7 +13,7 @@ public class Nombre {
 
     public Nombre(){}
 
-  /*tuve que agregarle este constructor sino no lo tomaba*/
+
   public Nombre(String nombre){
       this.nombre = nombre;
   }

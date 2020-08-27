@@ -1,6 +1,5 @@
 package challenge.Trainee.model;
 
-import challenge.Trainee.repository.DatosRepository;
 
 import java.util.List;
 
