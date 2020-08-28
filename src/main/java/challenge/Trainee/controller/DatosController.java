@@ -19,6 +19,14 @@ public class DatosController {
 
 
     /* Punto 2*/
+    /*Este era el punto 3
+    * Le pondria el nombre de lo que estaria tratando de guardar tipo si estoy
+    * tratando de guardar una persona pondria /personas y el POST ya indicaria
+    * que se intenta guardar.
+    * un GET seria para obtenerla con un id por ejemplo (no es necesario en este ejercicio)
+    * y un PUT para modificarla (no es necesario en este ejercicio)
+    * sin retorno era este metodo
+    * */
     @PostMapping(value = "guardar", consumes = "application/json")
     public RetornoDatos guardar(@RequestBody List<Datos> datos) {
         serviceDatos.guardarTodo(datos);
@@ -30,8 +38,9 @@ public class DatosController {
         return retorno;
 
     }/* 3*/
-
+    /*este punto era el 3.1*/
     @GetMapping("/buscarApellido")
+    /*otro nombre le hubieses puesto al metodo jajaja*/
     public List<Datos> perez(@RequestParam(name = "apellido", required = false) String apellido) {
         return repoDatos.findByApellido(apellido);
     }

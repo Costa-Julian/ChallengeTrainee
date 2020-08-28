@@ -16,7 +16,8 @@ public class ReturnNombres {
     private List<String> terminadosEnS ;
 
 
-
+  /*la manera de resolverlo esta perfecto pero los metodos tenian que estar
+  ubicados en el servicio*/
     public ReturnNombres(List<String> nombres){
         this.comienzosConLU = inicio(nombres);
         this.cantidadNombres = nombres.size();
@@ -54,7 +55,8 @@ public class ReturnNombres {
                 ", cantidadNombres=" + cantidadNombres +
                 ", Terminados en S=" + terminadosEnS ;
     }
-
+    /*ojo con el codigo que no se usa a muchos progradores no les gusta
+    * lo mismo con el codigo comentado y mal identado (tabs) */
     public String comienzo() {
         List<Nombre> lista = new ArrayList<>();
     return null;
