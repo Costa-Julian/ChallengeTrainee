@@ -1,7 +1,7 @@
 package challenge.Trainee.model;
 
 import javax.persistence.*;
-import java.util.List;
+
 
 @Entity
 public class Nombre {
@@ -14,7 +14,7 @@ public class Nombre {
     public Nombre(){}
 
 
-  public Nombre(String nombre){
+    public Nombre(String nombre){
       this.nombre = nombre;
   }
 

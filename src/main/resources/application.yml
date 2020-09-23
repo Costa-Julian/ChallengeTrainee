@@ -1,10 +1,42 @@
-spring.datasource.driver-class.name=com.mysql.jdbc.Driver
-spring.datasource.url=jdbc:mysql://localhost:3306/challenge?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
-spring.datasource.username=root
-spring.datasource.password=root
-
-spring.jpa.generate-ddl=true
-spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
-spring.jpa.show-sql=true
-
-spring.jpa.hibernate.name.physical-stratergy=org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+server:
+  port: 8080
+---
+spring:
+  profiles: default-postgres
+  datasource:
+    url: 'jdbc:postgresql://localhost:5432/juanperez'
+    driver-class-name: 'org.postgresql.Driver'
+    username: 'sarasa'
+    password: 'sarasa'
+    test-on-borrow: true
+    validation-query: 'SELECT 1'
+    log-validation-errors: true
+    max-active: 20
+    initial-size: 4
+    autoReconnect: true
+    autoReconnectForPools: true
+    is-connection-validation-required: true
+hibernate:
+  hbm2ddlAuto: 'create-drop'
+  showSql: true
+---
+spring:
+  profiles: production
+  jpa:
+    daqtabase-platform: org.hibernate.dialect.PostgreSQL94Dialect
+  datasource:
+    #          url: 'jdbc:postgresql://localhost:5432/basededatos'
+    driver-class-name: 'org.postgresql.Driver'
+    username: 'root'
+    password: 'root'
+    test-on-borrow: true
+    validation-query: 'SELECT 1'
+    log-validation-errors: true
+    max-active: 20
+    initial-size: 4
+    autoReconnect: true
+    autoReconnectForPools: true
+    is-connection-validation-required: true
+hibernate:
+  hbm2ddlAuto: 'create'
+  showSql: true
