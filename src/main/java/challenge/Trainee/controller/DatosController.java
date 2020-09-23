@@ -28,20 +28,19 @@ public class DatosController {
     * sin retorno era este metodo
     * */
     @PostMapping(value = "guardar", consumes = "application/json")
-    public RetornoDatos guardar(@RequestBody List<Datos> datos) {
+    public RetornoDatos persona(@RequestBody List<Datos> datos) {
         serviceDatos.guardarTodo(datos);
         RetornoDatos retorno = new RetornoDatos();
         retorno.setUltNombre(mostrarUltimoNombre());
         retorno.setPrimerDni(mostrarDniPrimero());
         retorno.setOrden(ordenLista());
-
         return retorno;
 
     }/* 3*/
     /*este punto era el 3.1*/
     @GetMapping("/buscarApellido")
     /*otro nombre le hubieses puesto al metodo jajaja*/
-    public List<Datos> perez(@RequestParam(name = "apellido", required = false) String apellido) {
+    public List<Datos> buscar(@RequestParam(name = "apellido", required = false) String apellido) {
         return repoDatos.findByApellido(apellido);
     }
 

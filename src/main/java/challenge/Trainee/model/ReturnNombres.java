@@ -55,12 +55,7 @@ public class ReturnNombres {
                 ", cantidadNombres=" + cantidadNombres +
                 ", Terminados en S=" + terminadosEnS ;
     }
-    /*ojo con el codigo que no se usa a muchos progradores no les gusta
-    * lo mismo con el codigo comentado y mal identado (tabs) */
-    public String comienzo() {
-        List<Nombre> lista = new ArrayList<>();
-    return null;
-    }
+
 
     public long contador(List nombres){
         return nombres.size();

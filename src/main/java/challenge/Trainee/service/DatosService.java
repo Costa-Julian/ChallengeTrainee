@@ -13,10 +13,7 @@ import java.util.List;
 public class DatosService implements IDatosService{
     @Autowired
     public DatosRepository repoDatos;
-    @Override
-    public List<Datos> mostrarTodo() {
-        return repoDatos.findAll();
-    }
+
 
 
     @Override
