@@ -17,7 +17,10 @@ public class DatosController {
     @Autowired
     public DatosRepository repoDatos;
 
-
+    @GetMapping ("ping")
+    public String ping (String ping){
+        return "pong";
+    }
     /* Punto 2*/
     /*Este era el punto 3
     * Le pondria el nombre de lo que estaria tratando de guardar tipo si estoy
