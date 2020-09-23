@@ -26,6 +26,6 @@ spring:
     hibernate:
       hbm2ddlAuto: 'create-drop'
       showSql: true
-      ddl-auto: create
+      ddl-auto: update
     generate-ddl: true
 
