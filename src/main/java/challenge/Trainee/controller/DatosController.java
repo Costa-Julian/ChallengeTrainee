@@ -21,15 +21,7 @@ public class DatosController {
     public String ping (String ping){
         return "pong";
     }
-    /* Punto 2*/
-    /*Este era el punto 3
-    * Le pondria el nombre de lo que estaria tratando de guardar tipo si estoy
-    * tratando de guardar una persona pondria /personas y el POST ya indicaria
-    * que se intenta guardar.
-    * un GET seria para obtenerla con un id por ejemplo (no es necesario en este ejercicio)
-    * y un PUT para modificarla (no es necesario en este ejercicio)
-    * sin retorno era este metodo
-    * */
+
     @PostMapping(value = "guardar", consumes = "application/json")
     public RetornoDatos persona(@RequestBody List<Datos> datos) {
         serviceDatos.guardarTodo(datos);
