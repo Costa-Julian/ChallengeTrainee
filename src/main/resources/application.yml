@@ -8,7 +8,7 @@ spring:
     username: root
 ---
 spring:
-  profiles: production
+  profiles: default-postgres
   jpa:
     daqtabase-platform: org.hibernate.dialect.PostgreSQL94Dialect
   datasource:
