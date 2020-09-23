@@ -8,9 +8,11 @@ spring:
     username: root
 ---
 spring:
-  profiles: default-postgres
+  profiles: production
+  jpa:
+    daqtabase-platform: org.hibernate.dialect.PostgreSQL94Dialect
   datasource:
-    url: 'jdbc:postgresql://localhost:5432/challenge'
+             url: 'jdbc:postgresql://localhost:5432/challenge'
     driver-class-name: 'org.postgresql.Driver'
     username: 'sarasa'
     password: 'sarasa'
@@ -22,10 +24,7 @@ spring:
     autoReconnect: true
     autoReconnectForPools: true
     is-connection-validation-required: true
-  jpa:
-    hibernate:
-      hbm2ddlAuto: 'create-drop'
-      showSql: true
-      ddl-auto: update
-    generate-ddl: true
+hibernate:
+  hbm2ddlAuto: 'create'
+  showSql: true
 
