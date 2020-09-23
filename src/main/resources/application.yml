@@ -12,7 +12,7 @@ spring:
   jpa:
     daqtabase-platform: org.hibernate.dialect.PostgreSQL94Dialect
   datasource:
-             url: 'jdbc:postgresql://localhost:5432/challenge'
+    url: 'jdbc:postgresql://localhost:5432/challenge'
     driver-class-name: 'org.postgresql.Driver'
     username: 'sarasa'
     password: 'sarasa'
