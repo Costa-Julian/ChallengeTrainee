@@ -44,6 +44,10 @@ public class DatosController {
         serviceDatos.borrarTodo();
         return "Datos borrados";
     }
+    @GetMapping("dni")
+    public String dni(){
+        return "dni = " + repoDatos.findFirst1By();
+    }
 
     public String mostrarUltimoNombre() {
         return repoDatos.findTopByOrderByCodigoDesc();
